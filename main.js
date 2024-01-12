@@ -210,6 +210,4 @@ form.addEventListener('submit', function(e){
     closeForm();
 })
 
-setTimeout(()=>{
-    const userName = prompt('What\'s your name?')
-}, 5000)
+const userName = prompt('What\'s your name?');
