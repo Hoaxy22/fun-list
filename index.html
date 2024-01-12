@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Fun Website 😎</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">Koobs&#8482;</h1>
+        <div class="icons">
+            <img class="icon" src="icons/home.svg" alt="home">
+            <button><img class="icon" src="icons/envelope.svg" alt="messages"></button>
+            <img class="icon" src="icons/search.svg" alt="search">
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="messages">
+            <h1>Messages</h1>
+        </div>
+        <button class="btn">Add new item</button>
+        <form>
+            <legend>Item Info</legend>
+            <input class="title" type="text" name="title" placeholder="Title" required/>
+            <input class="summary" type="text" name="summary" placeholder="Summary" required/>
+            <button class="submit" type="submit">Okay</button>
+        </form>
+        <div class="overlay"></div>
+        <div class="item-list"></div>
+    </div>
+    <div class="bottom-page">
+        <div class="complete-items"></div>
+    </div>
+</body>
+</html>

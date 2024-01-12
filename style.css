@@ -1,0 +1,230 @@
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(Fonts-Open/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(Fonts-Open/Poppins-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    --dark-blue: #222831;
+    --grey: #bdc5d2;
+    --light-blue: #00ADB5;
+    --white: #EEEEEE;
+}
+/* header */
+body{
+    background-color: var(--dark-blue);
+}
+.header{
+    display: flex;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    font-family: Poppins-Bold;
+    font-size: 1.7rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 0;
+    box-shadow: rgba(0, 0, 0, .7) 0px 6px 12px -2px, rgba(0, 0, 0, .7) 0px 3px 7px -3px;
+}
+.logo:hover{
+    cursor: grab;
+}
+.icons{
+    display: flex;
+    gap: 2rem;
+}
+.icon{
+    max-width: 2rem;
+}
+.icon:hover{
+    cursor: grab;
+    padding: .2rem;
+    opacity: 60%;
+    border-bottom: 2px solid var(--light-blue);
+}
+/* main-content */
+.main-content{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+}
+.item-list, .complete-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, .5fr));
+    width: 100%;
+    gap: 1rem;
+    height: 50%;
+}
+.header button{
+    border: none;
+}
+.btn{
+    border-radius: 7px;
+    border: none;
+    background-color: var(--white);
+    font-size: 1.2rem;
+    padding: 1rem;
+    font-family: Poppins-Regular;
+    width: 25.75rem;
+    box-shadow: rgba(0, 0, 0, 1) 0px 6px 12px -2px, rgba(0, 0, 0, 1) 0px 3px 7px -3px;
+}
+button:hover{
+    cursor: grab;
+    opacity: 75%;
+}
+/* card */
+.card{
+    display: grid;
+    background-color: var(--grey);
+    overflow: visible;
+    min-height: 150px;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    font-size: 1.3rem;
+    border-radius: 7px;
+    text-align: center;
+    font-family: Poppins-Bold;
+    box-shadow: rgba(0, 0, 0, .7) 0px 6px 12px -2px, rgba(0, 0, 0, .7) 0px 3px 7px -3px;
+}
+.description{
+    font-family: Poppins-Regular;
+    color: #455163;
+}
+.edit{
+    border: none;
+    font-size: 1.2rem;
+    font-family: Poppins-Regular;
+    background-color: var(--grey);
+}
+form{
+    display: none;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay.active{
+    display: block;
+}
+legend{
+    font-size: 1.3rem;
+    font-family: Poppins-Bold;
+}
+form.active, .messages.active{
+    display: grid;
+    background-color: var(--white);
+    padding: 2rem;
+    padding-bottom: 3rem;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, .7) 0px 6px 12px -2px, rgba(0, 0, 0, .7) 0px 3px 7px -3px;
+    text-align: center;
+    gap: 2rem;
+    z-index: 1;
+    position:absolute;
+}
+input{
+    border: none;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 7px;
+    font-family: Poppins-Regular;
+    color: var(--white);
+    background-color: #222831;
+}
+input::placeholder{
+    color: rgb(201, 201, 201)
+}
+.submit{
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 7px;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    font-family: Poppins-Bold;
+    justify-self: center; 
+
+} 
+.submit:hover{
+    transform: scale(90%, 90%);
+    background-color: #00dae6;
+}
+.remove, .complete{
+    background-color: var(--grey);
+    border: none;
+}
+.btn-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-page{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+.undo{
+    border: none;
+    
+}
+
+.complete, .remove{
+    margin-top: -3px;
+}
+[contenteditable]{
+    outline: none;
+}
+.card.hidden {
+    overflow: hidden;
+    animation: shrink .2s;
+    transform: scale(0);
+}
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+        
+    }
+}
+.messages{
+    display: none;
+}
+.messages.active{
+    display: grid;
+    width: 300px;
+    aspect-ratio: 2 / 4;
+    border: 3px solid black;
+    padding: 0;
+}
+.messages h1{
+    font-family: Poppins-Bold;
+    padding: 1rem;
+}
+.message{
+    display: block;
+    background-color: var(--dark-blue);
+    height: fit-content;
+    color: var(--white);
+    padding: 2rem;
+    font-size: 1.3rem;
+    font-family: Poppins-Bold;
+}
