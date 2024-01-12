@@ -150,7 +150,7 @@ function sendMessage(userName){
                         jarodAnswer = prompt('What game did we grind while we were at sissy\'s first apartment')
                         if (jarodAnswer === '7 days to die' || jarodAnswer === '7 Days to Die'){
                             message.innerHTML = 'fine you got me'
-                            setimeout(()=>{
+                            setTimeout(()=>{
                                 jarodAnswer = prompt('Whose your best bro')
                                 if (jarodAnswer === 'Kolby' || jarodAnswer === 'you'|| jarodAnswer === 'kolby'){
                                     message.innerHTML = 'Yessirrrr'
@@ -159,7 +159,7 @@ function sendMessage(userName){
                                         setTimeout(()=>{
                                             closeMessages();
                                         }, 5000)
-                                    }, 3000)
+                                    }, 2000)
                                 }
                                 else{
                                     message.innerHTML = 'Wrong, Refresh'
